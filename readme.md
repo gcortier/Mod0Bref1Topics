@@ -3,15 +3,15 @@
 `python -m venv .venv`
 
 ## Activation de l'environnement virtuel
-### Windows
--  `.venv\Scripts\Activate.ps1`
+- Windows :  `.venv\Scripts\Activate.ps1`
+- macOS/Linux: `source .venv/bin/activate`
 
 ## installation des bibliothèques
 - `pip install nltk fastapi uvicorn streamlit requests pydantic loguru`
 
 ### Téléchargement du lexique VADER :
 - `python -c "import nltk; nltk.download('vader_lexicon')"`
-- 
+  
 ### Génération requirements.txt à chaque installation de module
 - `pip freeze > requirements.txt`
 
@@ -19,14 +19,12 @@
 - `pip install -r requierements.txt`
 
 
-## https://fastapi.tiangolo.com/
-
 ## run server uvicorn :
 - `uvicorn sentiment_api:app --host 127.0.0.1 --port 9000 --reload`
 
 ## Afficher la doc : 
 - `http://127.0.0.1:9000/docs`
-- ## Afficher la redoc : 
+- ## Afficher redocs : 
 - `http://127.0.0.1:9000/redocs`
 
 
@@ -34,7 +32,6 @@
 `streamlit run sentiment_streamlit.py`
 
 ## Lancer les tests
-
 Pour exécuter les tests unitaires sur l'API FastAPI :
 
 ```powershell
@@ -58,3 +55,7 @@ Mod0Bref1Topics/
 
 => https://github.com/gcortier/Mod0Bref1Topics
 
+## Documentations :
+- [FastAPI Documentation](https://fastapi.tiangolo.com/)
+- [Streamlit Documentation](https://docs.streamlit.io/) 
+- [uvicorn :Documentation](https://www.uvicorn.org/)
