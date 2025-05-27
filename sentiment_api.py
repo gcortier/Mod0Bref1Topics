@@ -1,5 +1,5 @@
 from nltk.sentiment import SentimentIntensityAnalyzer
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from loguru import logger
 import os
@@ -33,9 +33,9 @@ class Texte(BaseModel):
     texte: str
 
 @app.get("/")
-async def root():
-    logger.info("Route '/' appelée.")
-    return {"message": "Hello World!"}
+async def root(request: Request):
+    logger.info(f"Route '{request.url.path}' called by  {request.client.host}")
+    return {"message": "Bienvenue sur l'API"}
 
 
 @app.post("/analyse_sentiment/")
